@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PtdK22CNT3Lesson7Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PtdKhoa">
+    <Key>
+      <PropertyRef Name="PtdMaKH" />
+    </Key>
+    <Property Name="PtdMaKH" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="PtdTenKh" Type="nvarchar" MaxLength="50" />
+    <Property Name="PtdTrangThai" Type="bit" />
+  </EntityType>
+  <EntityType Name="PtdSV">
+    <Key>
+      <PropertyRef Name="PtdMaSV" />
+    </Key>
+    <Property Name="PtdMaSV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PtdHoSV" Type="nvarchar" MaxLength="50" />
+    <Property Name="PtdTenSV" Type="nvarchar" MaxLength="50" />
+    <Property Name="PtdNgaySinh" Type="date" />
+    <Property Name="PtdPhai" Type="bit" />
+    <Property Name="PtdPhone" Type="nchar" MaxLength="10" />
+    <Property Name="Ptdmail" Type="nvarchar" MaxLength="50" />
+    <Property Name="PtdMaKH" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK_PtdSV_PtdKhoa">
+    <End Role="PtdKhoa" Type="Self.PtdKhoa" Multiplicity="0..1" />
+    <End Role="PtdSV" Type="Self.PtdSV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PtdKhoa">
+        <PropertyRef Name="PtdMaKH" />
+      </Principal>
+      <Dependent Role="PtdSV">
+        <PropertyRef Name="PtdMaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PtdK22CNT3Lesson7ModelStoreContainer">
+    <EntitySet Name="PtdKhoa" EntityType="Self.PtdKhoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PtdSV" EntityType="Self.PtdSV" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_PtdSV_PtdKhoa" Association="Self.FK_PtdSV_PtdKhoa">
+      <End Role="PtdKhoa" EntitySet="PtdKhoa" />
+      <End Role="PtdSV" EntitySet="PtdSV" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

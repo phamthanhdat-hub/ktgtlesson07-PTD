@@ -1,0 +1,80 @@
+﻿@model BKTGT.PTD.Models.PtdSV
+
+@{
+    ViewBag.Title = "PtdDelete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PtdSV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdHoSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdHoSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdTenSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdTenSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdNgaySinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdNgaySinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdPhai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdPhai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ptdmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ptdmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdKhoa.PtdTenKh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdKhoa.PtdTenKh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "PtdIndex")
+        </div>
+    }
+</div>

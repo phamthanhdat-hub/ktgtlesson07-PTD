@@ -1,0 +1,69 @@
+﻿@model IEnumerable<BKTGT.PTD.Models.PtdSV>
+
+@{
+    ViewBag.Title = "PtdIndex";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "PtdCreate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdHoSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdTenSV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdNgaySinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdPhai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ptdmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PtdKhoa.PtdTenKh)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtdHoSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtdTenSV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtdNgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtdPhai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtdPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ptdmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PtdKhoa.PtdTenKh)
+        </td>
+        <td>
+            @Html.ActionLink("PTDEdit", "PtdEdit", new { id=item.PtdMaSV }) |
+            @Html.ActionLink("PTDDetails", "PtdDetails", new { id=item.PtdMaSV }) |
+            @Html.ActionLink("PTDDelete", "PtdDelete", new { id=item.PtdMaSV })
+        </td>
+    </tr>
+}
+
+</table>

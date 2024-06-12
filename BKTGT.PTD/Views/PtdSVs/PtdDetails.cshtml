@@ -1,0 +1,74 @@
+﻿@model BKTGT.PTD.Models.PtdSV
+
+@{
+    ViewBag.Title = "PtdDetails";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PtdSV</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdHoSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdHoSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdTenSV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdTenSV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdNgaySinh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdNgaySinh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdPhai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdPhai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ptdmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ptdmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PtdKhoa.PtdTenKh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PtdKhoa.PtdTenKh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PtdMaSV }) |
+    @Html.ActionLink("Back to List", "PtdIndex")
+</p>
